@@ -6,63 +6,67 @@ The project is powered by Tauri (Rust) and React (Vite + Tailwind CSS).
 
 ---
 
-## 1. Yêu cầu hệ thống (Prerequisites)
+## 1. Prerequisites
 
-Trước khi cài đặt và chạy ứng dụng, hãy đảm bảo hệ thống của bạn đã cài đặt các công cụ phát triển cốt lõi sau:
+Before installing and running the application, ensure your system has the following core development tools installed:
 
 ### Windows
-*   **Node.js**: Phiên bản LTS mới nhất (khuyến nghị v18 hoặc v20+).
+*   **Node.js**: Latest LTS version (v18 or v20+ recommended).
 *   **Rust Toolchain**:
-    *   Tải xuống và chạy `rustup-init.exe` từ trang web chính thức của Rust.
-    *   Tiến hành với tùy chọn cài đặt mặc định.
+    *   Download and run `rustup-init.exe` from the official Rust website.
+    *   Proceed with the default installation option.
 *   **C++ Build Tools**:
-    *   Tauri yêu cầu Visual Studio C++ Build Tools để biên dịch mã Rust thành tệp nhị phân gốc trên Windows.
-    *   Trong quá trình cài đặt hoặc thông qua Visual Studio Installer, chọn khối lượng công việc **Desktop development with C++**.
+    *   Tauri requires the Visual Studio C++ Build Tools to compile Rust code into a native binary on Windows.
+    *   During installation or via the Visual Studio Installer, select the **Desktop development with C++** workload.
 
 ### macOS
-*   **Node.js**: Phiên bản v18+.
-*   **XCode Command Line Tools**: Chạy lệnh sau trong Terminal của bạn:
+*   **Node.js**: Version v18+.
+*   **XCode Command Line Tools**: Run the following command in your Terminal:
     ```bash
     xcode-select --install
     ```
-*   **Rust**: Cài đặt thông qua trình cài đặt toolchain chính thức:
+*   **Rust**: Install via the official toolchain installer:
+    ```bash
+    xcode-select --install
+    ```
+*   **Rust**: Install via the official toolchain installer:
     ```bash
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
     ```
 
-## 2. Cài đặt & Thiết lập
+## 2. Installation & Setup
 
-Sau khi đáp ứng các yêu cầu hệ thống, hãy làm theo các bước sau để thiết lập và khởi chạy dự án trong môi trường phát triển cục bộ của bạn:
+Once the prerequisites are met, follow these steps to set up and launch the project in your local development environment:
 
-1.  Khởi tạo Git và clone/tải xuống repository về máy cục bộ của bạn.
+1.  Initialize Git and clone/download the repository to your local machine.
 
-2.  Điều hướng đến thư mục gốc của dự án:
+2.  Navigate to the project root directory:
     ```bash
     cd Anki-Builder
     ```
 
-3.  Cài đặt các dependency frontend (Node modules):
+3.  Install the frontend dependencies (Node modules):
     ```bash
     npm install
     ```
 
-4.  Khởi chạy ứng dụng trong môi trường phát triển Tauri:
+4.  Launch the application within the Tauri development runtime:
     ```bash
     npm run tauri dev
     ```
-    **Lưu ý**: Lần khởi chạy đầu tiên sẽ mất vài phút vì Cargo (trình quản lý gói của Rust) sẽ tải xuống các crate cốt lõi của Tauri và biên dịch tệp nhị phân ứng dụng gốc lần đầu tiên.
+    **Note**: The initial launch will take a few minutes as Cargo (Rust's package manager) downloads the Tauri core crates and compiles the native application binary for the first time.
 
-## 3. Công nghệ cốt lõi (Core Tech Stack)
+## 3. Core Tech Stack
 
-*   **Framework**: Tauri v1 (Cho phép tạo các ứng dụng desktop đa nền tảng siêu nhẹ được xây dựng bằng Rust).
-*   **Frontend**: React JS được đóng gói với Vite (Cung cấp tính năng Hot Module Replacement - HMR tức thì).
-*   **Drag and Drop Engine**: `@dnd-kit/core` và `@dnd-kit/utilities` (Sử dụng kéo thả dựa trên tọa độ con trỏ thay vì HTML5 gốc, đảm bảo tương tác mượt mà bên trong các Webview của hệ thống).
-*   **Styling & Layout**: Tailwind CSS (Tăng tốc độ lắp ráp giao diện người dùng và cung cấp cơ chế Grid/Flexbox phản hồi).
+*   **Framework**: Tauri v1 (Enables ultra-lightweight cross-platform desktop applications built with Rust).
+*   **Frontend**: React JS bundled with Vite (Provides instantaneous Hot Module Replacement - HMR).
+*   **Drag and Drop Engine**: `@dnd-kit/core` and `@dnd-kit/utilities` (Utilizes pointer-coordinate-based dragging instead of native HTML5, ensuring smooth interactions inside system Webviews).
+*   **Styling & Layout**: Tailwind CSS (Speeds up UI assembly and powers the responsive Grid/Flexbox mechanics).
 
-## 4. Các tính năng chính đã triển khai (Key Features Implemented)
+## 4. Key Features Implemented
 
-*   **Kéo thả con trỏ hiện đại**: Tận dụng `@dnd-kit` để vượt qua các hạn chế kéo thả HTML5 gốc, loại bỏ các vấn đề khóa con trỏ và hộp cát bảo mật trên các Webview của hệ điều hành khác nhau.
-*   **Hệ thống lưới đệ quy**: Sử dụng CSS Grid Templates để chia các khối thiết kế một cách đệ quy thành các tỷ lệ hình học 50/50 chính xác, giải quyết các lỗi bố cục kéo giãn nội dung phổ biến trong việc lồng ghép Flexbox.
-*   **Bảng thuộc tính nâng cao**: Cung cấp các điều khiển trực tiếp, tương tác cho màu nền hộp, bán kính đường viền, kích thước phông chữ, màu văn bản, phông chữ hệ thống an toàn web, căn chỉnh văn bản, in đậm và in nghiêng.
-*   **Kiểm soát hiển thị mặt thẻ**: Sử dụng hệ thống gắn thẻ thông minh cho phép người dùng cấu hình các khối bố cục cụ thể chỉ hiển thị trên Mặt trước (Front Template) hoặc Mặt sau (Back Template).
-*   **Trình xuất đa tab**: Biên dịch cấu trúc bố cục thành các tab riêng biệt, gọn gàng cho HTML Mặt trước và HTML Mặt sau, cùng với trường CSS Styling được chia sẻ, được xây dựng để sao chép-dán trực tiếp vào Anki.
+*   **Modern Pointer Drag-and-Drop**: Leverages `@dnd-kit` to bypass native HTML5 drag limitations, eliminating pointer lock and security-sandbox issues across different OS Webviews.
+*   **Recursive Grid System**: Uses CSS Grid Templates to recursively split design blocks into exact 50/50 geometric ratios, resolving content-stretching layout bugs common in Flexbox sub-nesting.
+*   **Advanced Property Panel**: Offers direct, interactive controls for box background colors, border radiuses, font sizes, text colors, web-safe system fonts, text alignment, bolding, and italics.
+*   **Card Side Visibility Controls**: Uses an intelligent tagging system allowing users to configure specific layout blocks to render exclusively on the Front Template or the Back Template.
+*   **Multi-Tab Exporter**: Compiles layout structures into separate, clean tabs for Front HTML and Back HTML, alongside a shared CSS Styling field, built for direct copy-pasting into Anki.
