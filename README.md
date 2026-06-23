@@ -56,17 +56,3 @@ Once the prerequisites are met, follow these steps to set up and launch the proj
     ```
     **Note**: The initial launch will take a few minutes as Cargo (Rust's package manager) downloads the Tauri core crates and compiles the native application binary for the first time.
 
-## 3. Core Tech Stack
-
-*   **Framework**: Tauri v1 (Enables ultra-lightweight cross-platform desktop applications built with Rust).
-*   **Frontend**: React JS bundled with Vite (Provides instantaneous Hot Module Replacement - HMR).
-*   **Drag and Drop Engine**: `@dnd-kit/core` and `@dnd-kit/utilities` (Utilizes pointer-coordinate-based dragging instead of native HTML5, ensuring smooth interactions inside system Webviews).
-*   **Styling & Layout**: Tailwind CSS (Speeds up UI assembly and powers the responsive Grid/Flexbox mechanics).
-
-## 4. Key Features Implemented
-
-*   **Modern Pointer Drag-and-Drop**: Leverages `@dnd-kit` to bypass native HTML5 drag limitations, eliminating pointer lock and security-sandbox issues across different OS Webviews.
-*   **Recursive Grid System**: Uses CSS Grid Templates to recursively split design blocks into exact 50/50 geometric ratios, resolving content-stretching layout bugs common in Flexbox sub-nesting.
-*   **Advanced Property Panel**: Offers direct, interactive controls for box background colors, border radiuses, font sizes, text colors, web-safe system fonts, text alignment, bolding, and italics.
-*   **Card Side Visibility Controls**: Uses an intelligent tagging system allowing users to configure specific layout blocks to render exclusively on the Front Template or the Back Template.
-*   **Multi-Tab Exporter**: Compiles layout structures into separate, clean tabs for Front HTML and Back HTML, alongside a shared CSS Styling field, built for direct copy-pasting into Anki.
