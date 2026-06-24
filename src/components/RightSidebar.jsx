@@ -8,7 +8,7 @@ export default function RightSidebar({ selectedBlock, onPropertyChange }) {
       {selectedBlock ? (
         <div className="flex flex-col gap-5">
           
-          {/* Cấu hình Màu Nền */}
+          {/* Cấu hình Màu Nền Box */}
           <div className="flex flex-col gap-1.5">
             <label className="text-xs text-slate-400 font-medium">Màu Nền Box</label>
             <div className="flex gap-2 items-center">
@@ -48,7 +48,7 @@ export default function RightSidebar({ selectedBlock, onPropertyChange }) {
 
           <hr className="border-slate-800 my-1" />
 
-          {/* Cấu hình Font Chữ */}
+          {/* Cấu hình Phông Chữ */}
           <div className="flex flex-col gap-1.5">
             <label className="text-xs text-slate-400 font-medium">Phông Chữ</label>
             <select
@@ -64,7 +64,7 @@ export default function RightSidebar({ selectedBlock, onPropertyChange }) {
             </select>
           </div>
 
-          {/* Cấu hình Căn Lề (Text Align) */}
+          {/* Cấu hình Căn Lề Chữ */}
           <div className="flex flex-col gap-1.5">
             <label className="text-xs text-slate-400 font-medium">Căn Lề Chữ</label>
             <div className="grid grid-cols-3 gap-1 bg-slate-900 p-0.5 border border-slate-800 rounded-lg">
@@ -85,7 +85,7 @@ export default function RightSidebar({ selectedBlock, onPropertyChange }) {
             </div>
           </div>
 
-          {/* Cấu hình Định Dạng Chữ (Đậm/Nghiêng) */}
+          {/* Cấu hình Kiểu Chữ */}
           <div className="flex flex-col gap-1.5">
             <label className="text-xs text-slate-400 font-medium">Kiểu Chữ</label>
             <div className="grid grid-cols-2 gap-1 bg-slate-900 p-0.5 border border-slate-800 rounded-lg">
@@ -130,7 +130,7 @@ export default function RightSidebar({ selectedBlock, onPropertyChange }) {
             />
           </div>
 
-          {/* Cấu hình Cỡ Chữ */}
+          {/* Cấu hình Kích Thước Chữ */}
           <div className="flex flex-col gap-1.5">
             <div className="flex justify-between text-xs text-slate-400">
               <label>Kích Thước Chữ</label>
